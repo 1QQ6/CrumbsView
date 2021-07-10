@@ -1,0 +1,3 @@
+include ':CrumbsView'
+include ':app'
+rootProject.name = "CrumbsView"

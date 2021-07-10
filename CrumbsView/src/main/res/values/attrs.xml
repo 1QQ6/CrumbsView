@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BreadCrumbsView">
+        <attr name="select_item_color" format="color" />
+        <attr name="unselected_item_color" format="color" />
+    </declare-styleable>
+</resources>
