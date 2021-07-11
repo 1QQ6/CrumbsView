@@ -2,7 +2,12 @@
 Android端实现面包屑UI效果+Fragment联动
 
 #面包屑UI
-![image](https://github.com/1QQ6/CrumbsView/edit/master/GIF/device-2021-07-11-210616.gif)
+<img src="https://github.com/1QQ6/CrumbsView/blob/master/GIF/device-2021-07-11-210616.gif" width=200 height=360 />
+
+作者：SimpleBK
+链接：https://www.jianshu.com/p/20131a0105f5
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 #加入依赖：
 ```
