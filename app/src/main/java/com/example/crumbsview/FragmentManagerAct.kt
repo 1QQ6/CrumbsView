@@ -48,15 +48,15 @@ class FragmentManagerAct : FragmentActivity(), View.OnClickListener {
      * 初始化面包屑view
      */
     private fun initBreadCrumbsView() {
-        binding?.breadCrumbs?.setOnTabListener(object : CrumbsView.OnTabListener {
-            override fun onAdded(tab: CrumbsView.Tab?) {
+        binding?.breadCrumbs?.setOnTabListener(object : StrongCrumbsView.OnTabListener {
+            override fun onAdded(tab: StrongCrumbsView.Tab?) {
 
             }
-            override fun onActivated(tab: CrumbsView.Tab) {
+            override fun onActivated(tab: StrongCrumbsView.Tab) {
                 setFragment(tab.index, false)
             }
 
-            override fun onRemoved(tab: CrumbsView.Tab?) {
+            override fun onRemoved(tab: StrongCrumbsView.Tab?) {
 
             }
         })

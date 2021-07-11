@@ -29,7 +29,7 @@ import java.util.Map;
 * description:面包屑view
 *
 */
-public class CrumbsView extends FrameLayout {
+public class StrongCrumbsView extends FrameLayout {
     private Context mContext;
     private LinkedList<Tab> tabList = new LinkedList<>();
     private RecyclerView recyclerView;
@@ -46,15 +46,15 @@ public class CrumbsView extends FrameLayout {
      */
     private int mBreadCrumbsUnSelectedColor = Color.parseColor("#327EFF");
 
-    public CrumbsView(Context context) {
+    public StrongCrumbsView(Context context) {
         this(context, null);
     }
 
-    public CrumbsView(Context context, @Nullable AttributeSet attrs) {
+    public StrongCrumbsView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public CrumbsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public StrongCrumbsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context,attrs,defStyleAttr);
     }
