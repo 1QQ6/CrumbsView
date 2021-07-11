@@ -1,17 +1,14 @@
 package com.example.crumbsview
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.FrameLayout
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.crumbsview.constants.Constants
+import com.example.crumbsview.databinding.ActivityMainBinding
 import com.example.crumbsview.fragments.FragmentA
 import com.example.crumbsview.fragments.FragmentB
 import com.example.crumbsview.fragments.FragmentC
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 /**
@@ -24,13 +21,15 @@ class FragmentManagerAct : FragmentActivity(), View.OnClickListener {
     private var fragmentB: FragmentB? = null
     private var fragmentC: FragmentC? = null
     private var currentFragment = 0
+    private var binding : ActivityMainBinding? = null
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding?.root;
+        setContentView(view)
         initBreadCrumbsView()
         setFragment(currentFragment, true)
-
-        bottom_btn.setOnClickListener {
+        binding?.bottomBtn?.setOnClickListener {
             when (currentFragment) {
                 Constants.TYPE_FRAGMENT_A -> {
                     setFragment(Constants.TYPE_FRAGMENT_B,true)
@@ -49,7 +48,7 @@ class FragmentManagerAct : FragmentActivity(), View.OnClickListener {
      * 初始化面包屑view
      */
     private fun initBreadCrumbsView() {
-        breadCrumbs?.setOnTabListener(object : CrumbsView.OnTabListener {
+        binding?.breadCrumbs?.setOnTabListener(object : CrumbsView.OnTabListener {
             override fun onAdded(tab: CrumbsView.Tab?) {
 
             }
@@ -131,7 +130,7 @@ class FragmentManagerAct : FragmentActivity(), View.OnClickListener {
         // 传递参数，这里的map数据会存放在tab上，在创建Fragment时可以通过tab.getValue获取
         val map =
             HashMap<String, String>()
-        breadCrumbs!!.addTab(sb.toString(), map)
+        binding?.breadCrumbs!!.addTab(sb.toString(), map)
     }
 
     //隐藏Fragment
