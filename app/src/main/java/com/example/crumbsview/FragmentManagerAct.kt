@@ -52,8 +52,9 @@ class FragmentManagerAct : FragmentActivity(), View.OnClickListener {
             override fun onAdded(tab: StrongCrumbsView.Tab?) {
 
             }
-            override fun onActivated(tab: StrongCrumbsView.Tab) {
-                setFragment(tab.index, false)
+
+            override fun onActivated(tab: StrongCrumbsView.Tab?) {
+                setFragment(tab!!.index, false)
             }
 
             override fun onRemoved(tab: StrongCrumbsView.Tab?) {

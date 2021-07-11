@@ -1,30 +1,27 @@
-package com.example.crumbsview.utils;
+package com.example.crumbsview.utils
 
-
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.util.DisplayMetrics;
-import android.view.Display;
-import android.view.WindowManager;
+import android.app.Activity
+import android.content.Context
+import android.graphics.Point
+import android.graphics.Rect
+import android.util.DisplayMetrics
+import android.view.WindowManager
 
 /**
-* @author wangyiqing
-* time:2021/6/9
-* description:屏幕util，获取屏幕宽高等
-*/
-public class ScreenUtil {
-
+ * @author wangyiqing
+ * time:2021/6/9
+ * description:屏幕util，获取屏幕宽高等
+ */
+object ScreenUtil {
     /**
      * 取得屏幕分辨率
      * @param context
      * @return
      */
-    public static Point getScreenResolution(Context context) {
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        return new Point(display.getWidth(), display.getHeight());
+    fun getScreenResolution(context: Context): Point {
+        val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val display = wm.defaultDisplay
+        return Point(display.width, display.height)
     }
 
     /**
@@ -32,8 +29,8 @@ public class ScreenUtil {
      * @param context
      * @return
      */
-    public static int getScreenWidth(Context context) {
-        return getScreenResolution(context).x;
+    fun getScreenWidth(context: Context): Int {
+        return getScreenResolution(context).x
     }
 
     /**
@@ -41,10 +38,9 @@ public class ScreenUtil {
      * @param context
      * @return
      */
-    public static int getScreenHeight(Context context) {
-        return getScreenResolution(context).y;
+    fun getScreenHeight(context: Context): Int {
+        return getScreenResolution(context).y
     }
-
 
     /**
      * dp转px
@@ -52,9 +48,9 @@ public class ScreenUtil {
      * @param dipValue
      * @return
      */
-    public static int dip2px(Context context, float dipValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dipValue * scale + 0.5f);
+    fun dip2px(context: Context, dipValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
+        return (dipValue * scale + 0.5f).toInt()
     }
 
     /**
@@ -63,9 +59,9 @@ public class ScreenUtil {
      * @param pxValue
      * @return
      */
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale - 0.5f);
+    fun px2dip(context: Context, pxValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
+        return (pxValue / scale - 0.5f).toInt()
     }
 
     /**
@@ -73,19 +69,19 @@ public class ScreenUtil {
      * @param context
      * @return
      */
-    public static int getAppScreenHeight(Activity context){
-        Rect outRect = new Rect();
-        context.getWindow().getDecorView().getWindowVisibleDisplayFrame(outRect);
-        return outRect.height();
+    fun getAppScreenHeight(context: Activity): Int {
+        val outRect = Rect()
+        context.window.decorView.getWindowVisibleDisplayFrame(outRect)
+        return outRect.height()
     }
 
     /**
      * 获取屏幕像素
      */
-    public static float getDensity(Context context) {
-        WindowManager mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        mWindowManager.getDefaultDisplay().getMetrics(dm);
-        return dm.density;
+    fun getDensity(context: Context): Float {
+        val mWindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val dm = DisplayMetrics()
+        mWindowManager.defaultDisplay.getMetrics(dm)
+        return dm.density
     }
 }
