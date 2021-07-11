@@ -3,7 +3,7 @@ Android端实现面包屑UI效果+Fragment联动
 
 #面包屑UI
 
-<img src="https://github.com/1QQ6/CrumbsView/blob/master/GIF/device-2021-07-11-210616.gif" width=480 height=1080/>
+<img src="https://github.com/1QQ6/CrumbsView/blob/master/GIF/device-2021-07-11-210616.gif" width=320 height=800/>
 
 #加入依赖：
 ```
